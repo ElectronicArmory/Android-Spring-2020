@@ -5,6 +5,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -21,10 +22,25 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
+        val localTextView = textView2
 
+        setupUI(localTextView)
+    }
+
+    private fun setupUI(localTextView: TextView) {
         submitButton.setOnClickListener {
-            textView2.text = getString(R.string.name_key)
+            val inputValue = editText.text.toString()
+            val outputString = "Your principal ${inputValue.count() + 99} is $inputValue after $inputValue months"
+//             "Your principal " + $$ + " is " + $$ + "after XX months"
+            localTextView.text = "$outputString ${getString(R.string.name_key)}"
         }
+    }
+
+
+    override fun onDestroy() {
+        // Tear down here before calling super class's function
+
+        super.onDestroy()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -39,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
+            R.id.action_first -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
