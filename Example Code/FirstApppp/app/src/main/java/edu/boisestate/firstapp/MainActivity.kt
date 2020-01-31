@@ -1,5 +1,6 @@
 package edu.boisestate.firstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -25,6 +26,24 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
+        var count = 0
+
+        Log.d("BSU", "$count")
+        count = 3
+
+        Log.d("BSU", "$count")
+
+        count = 10
+        Log.d("BSU", "$count")
+
+
+        Event.state
+        Event.whichState()
+
+
+        val charCount = hasRestarted?.count().let {
+            Log.d("BSU", "Not null! Value is ${it}")
+        }
         val localTextView = textView2
 
         setupUI(localTextView)
@@ -36,7 +55,21 @@ class MainActivity : AppCompatActivity() {
             val outputString = "Your principal ${inputValue.count() + 99} is $inputValue after $inputValue months"
 //             "Your principal " + $$ + " is " + $$ + "after XX months"
             localTextView.text = "$outputString ${getString(R.string.name_key)}"
+
+            val newUser = UserModel()
+            newUser.username = "michaelziray@boisestate.edu"
+            newUser.loggedInTimes
+
+            if(ProfileRepository.loginUser(newUser)){
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra(SecondActivity.KEY_EXTRA, "new value")
+                startActivity(intent)
+            }
+
         }
+
+        val activity = AppCompatActivity()
+
     }
 
 
