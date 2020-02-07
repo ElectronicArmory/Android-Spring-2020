@@ -2,4 +2,7 @@
     <string name="app_name">FirstApp</string>
     <string name="action_settings">Settings</string>
     <string name="name_key">Here is the string in the XML</string>
+    <string name="textview_header">TextView</string>
+    <string name="buttonlonger_and_longer">ButtonLonger and Longer</string>
+    <string name="textview">TextView</string>
 </resources>

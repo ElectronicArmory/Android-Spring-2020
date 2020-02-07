@@ -15,7 +15,7 @@
         android:layout_height="2dp"
         android:layout_weight="1"
         android:fontFamily="@font/coming_soon"
-        android:text="TextView"
+        android:text="@string/textview_header"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -24,10 +24,13 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edit_text_margin"
+        android:layout_marginEnd="@dimen/edit_text_margin"
         android:layout_weight="1"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="Enter your name"
-        android:inputType="textPersonName" />
+        android:hint="@string/app_name"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/submitButton"
@@ -39,14 +42,14 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="15dp"
         android:layout_weight="1"
-        android:text="ButtonLonger and Longer" />
+        android:text="@string/buttonlonger_and_longer" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="gone"
@@ -63,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:enabled="false"
             android:text="Button" />
 
         <EditText

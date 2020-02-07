@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
         }
         val localTextView = textView2
 
+        UsersRepository.addUser(UserModel("mziray", "Mike0"))
+        UsersRepository.addUser(UserModel("mziray2", "Mike1"))
+        UsersRepository.addUser(UserModel("mziray3", "Mike2"))
+        UsersRepository.addUser(UserModel("mziray4", "Mike3"))
+
+//        val usersList = UsersRepository.usersList()
+        for (currentUser in UsersRepository.usersList()){
+            Log.d("BSU", currentUser.firstName)
+        }
         setupUI(localTextView)
     }
 
@@ -60,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             newUser.username = "michaelziray@boisestate.edu"
             newUser.loggedInTimes
 
-            if(ProfileRepository.loginUser(newUser)){
+            if(UsersRepository.loginUser(newUser)){
                 val intent = Intent(this, SecondActivity::class.java)
                 intent.putExtra(SecondActivity.KEY_EXTRA, "new value")
                 startActivity(intent)

@@ -16,5 +16,6 @@ class SecondActivity : AppCompatActivity() {
         val extraString:String = intent.getStringExtra(KEY_EXTRA)
 
         Log.d("BSU", extraString)
+
     }
 }
