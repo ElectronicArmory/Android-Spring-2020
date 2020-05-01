@@ -20,6 +20,10 @@ object TodoManager {
         currentResults!!
     }
 
+    // val entity = box.query()
+    //        .equal(StringIdEntity_.uid, uid, StringOrder.CASE_SENSITIVE)
+    //        .build().findUnique()
+
     fun addToDo(newToDoItem: ToDoItem){
         todosBox.put(newToDoItem)
     }

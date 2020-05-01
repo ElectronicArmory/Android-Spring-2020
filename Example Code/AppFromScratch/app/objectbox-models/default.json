@@ -1,0 +1,59 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:3372248234057211663",
+      "lastPropertyId": "6:6970212715723781788",
+      "name": "ToDoItem",
+      "properties": [
+        {
+          "id": "1:8788700781357961442",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3543836176245822675",
+          "name": "todoTitle",
+          "type": 9
+        },
+        {
+          "id": "3:3288007655757182970",
+          "name": "todoDescription",
+          "type": 9
+        },
+        {
+          "id": "4:3428121238169356185",
+          "name": "isDone",
+          "type": 1,
+          "flags": 2
+        },
+        {
+          "id": "5:8277433625125843323",
+          "name": "todoDueDate",
+          "type": 9
+        },
+        {
+          "id": "6:6970212715723781788",
+          "name": "todoPriority",
+          "type": 5,
+          "flags": 2
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:3372248234057211663",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

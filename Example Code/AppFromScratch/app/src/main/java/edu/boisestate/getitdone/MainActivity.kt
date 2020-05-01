@@ -17,16 +17,29 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import edu.boisestate.getitdone.dummy.DummyContent
 import edu.boisestate.getitdone.models.ToDoItem
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), ToDoItemFragment.OnListFragmentInteractionListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+
+        EventBus.getDefault().register(this)
+
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -46,6 +59,12 @@ class MainActivity : AppCompatActivity(), ToDoItemFragment.OnListFragmentInterac
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun newTodoItems(todoItemsEvent: NewTodoItemsEvent){
+        Log.d("BSU", "New todo items!")
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
